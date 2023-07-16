@@ -1,6 +1,8 @@
+import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/widgets/Sliding.dart';
 import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class splash_view_body extends StatefulWidget {
   const splash_view_body({super.key});
@@ -17,6 +19,7 @@ class _splash_view_bodyState extends State<splash_view_body>
   void initState() {
     super.initState();
     initSlidingAnimation();
+    navigatetohome();
   }
 
   @override
@@ -42,6 +45,13 @@ class _splash_view_bodyState extends State<splash_view_body>
         )
       ],
     );
+  }
+
+  void navigatetohome() {
+    Future.delayed(Duration(seconds: 2), () {
+      Get.to(const home_view(),
+          transition: Transition.fade, duration: kTabScrollDuration);
+    });
   }
 
   void initSlidingAnimation() {
