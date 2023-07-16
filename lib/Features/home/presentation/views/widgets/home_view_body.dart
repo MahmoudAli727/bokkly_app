@@ -10,7 +10,7 @@ class home_view_body extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(
-          height: 24,
+          height: 25,
         ),
         CustomAppbar(),
         CustomListItem(),
