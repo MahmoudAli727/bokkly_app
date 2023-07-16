@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:flutter/material.dart';
 
 class splash_view_body extends StatelessWidget {
@@ -5,6 +6,8 @@ class splash_view_body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Image(image: AssetImage(AssetsData.logo)),
+    );
   }
 }
