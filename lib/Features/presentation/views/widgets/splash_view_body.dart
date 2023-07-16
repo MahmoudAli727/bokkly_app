@@ -1,12 +1,39 @@
+import 'package:bookly_app/Features/presentation/views/widgets/Sliding.dart';
 import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:flutter/material.dart';
 
-class splash_view_body extends StatelessWidget {
+class splash_view_body extends StatefulWidget {
   const splash_view_body({super.key});
 
   @override
+  State<splash_view_body> createState() => _splash_view_bodyState();
+}
+
+class _splash_view_bodyState extends State<splash_view_body>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 20), end: Offset.zero)
+        .animate(animationController);
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -16,10 +43,9 @@ class splash_view_body extends StatelessWidget {
         SizedBox(
           height: 4,
         ),
-        Text(
-          "Read Free Books",
-          textAlign: TextAlign.center,
-        ),
+        SildingText(
+          slidingAnimation: slidingAnimation,
+        )
       ],
     );
   }
