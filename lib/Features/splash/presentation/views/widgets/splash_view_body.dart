@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/presentation/views/widgets/Sliding.dart';
+import 'package:bookly_app/Features/splash/presentation/views/widgets/Sliding.dart';
 import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:flutter/material.dart';
 
@@ -16,13 +16,7 @@ class _splash_view_bodyState extends State<splash_view_body>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 20), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
   }
 
   @override
@@ -48,5 +42,15 @@ class _splash_view_bodyState extends State<splash_view_body>
         )
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 20), end: Offset.zero)
+        .animate(animationController);
+    animationController.forward();
   }
 }
