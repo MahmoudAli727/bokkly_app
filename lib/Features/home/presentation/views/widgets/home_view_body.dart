@@ -1,5 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomAppbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featurelist.dart';
+import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class home_view_body extends StatelessWidget {
@@ -8,6 +9,7 @@ class home_view_body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(
           height: 25,
@@ -17,8 +19,14 @@ class home_view_body extends StatelessWidget {
           height: 20,
         ),
         FeatureList(),
-        SizedBox(
-          height: 20,
+        SizedBox(height: 30),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            "Best Seller",
+            textAlign: TextAlign.start,
+            style: Style.titleMedium,
+          ),
         ),
       ],
     );
