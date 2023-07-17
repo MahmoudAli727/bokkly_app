@@ -25,7 +25,7 @@ class home_view_body extends StatelessWidget {
           child: Text(
             "Best Seller",
             textAlign: TextAlign.start,
-            style: Style.titleMedium,
+            // style: Style.titleMedium,
           ),
         ),
       ],
