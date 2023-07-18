@@ -22,12 +22,15 @@ class home_view_body extends StatelessWidget {
         FeatureList(),
         SizedBox(height: 30),
         Padding(
-          padding: EdgeInsets.only(left: 20),
+          padding: EdgeInsets.only(left: 30),
           child: Text(
             "Best Seller",
             textAlign: TextAlign.start,
             style: Style.titleMedium18,
           ),
+        ),
+        SizedBox(
+          height: 20,
         ),
         BestSeller_item()
       ],

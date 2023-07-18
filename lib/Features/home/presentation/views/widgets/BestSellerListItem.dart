@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/Assets.dart';
+import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BestSeller_item extends StatelessWidget {
@@ -10,6 +11,9 @@ class BestSeller_item extends StatelessWidget {
       height: 125,
       child: Row(
         children: [
+          const SizedBox(
+            width: 30,
+          ),
           AspectRatio(
             aspectRatio: 2.5 / 4,
             child: Container(
@@ -23,6 +27,22 @@ class BestSeller_item extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            width: 30,
+          ),
+          const Column(
+            children: [
+              SizedBox(
+                width: 200,
+                child: Text(
+                  "Harry Potter\nand the Goblet of Fire",
+                  overflow: TextOverflow.ellipsis,
+                  style: Style.titleMedium20,
+                  maxLines: 2,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
