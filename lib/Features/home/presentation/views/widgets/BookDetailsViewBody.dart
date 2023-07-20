@@ -2,6 +2,7 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/CustomBookDe
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/ratingItem.dart';
 import 'package:bookly_app/core/utils/style.dart';
+import 'package:bookly_app/core/widgets/Custom_Button.dart';
 import 'package:flutter/material.dart';
 
 class Book_details_View_Body extends StatelessWidget {
@@ -49,6 +50,7 @@ class Book_details_View_Body extends StatelessWidget {
           const RatingItem(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
+          Custom_button(),
         ],
       ),
     );
