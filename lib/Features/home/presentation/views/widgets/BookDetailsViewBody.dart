@@ -1,8 +1,8 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomBookDetailsAppBar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/bookAction.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/ratingItem.dart';
 import 'package:bookly_app/core/utils/style.dart';
-import 'package:bookly_app/core/widgets/Custom_Button.dart';
 import 'package:flutter/material.dart';
 
 class Book_details_View_Body extends StatelessWidget {
@@ -20,7 +20,7 @@ class Book_details_View_Body extends StatelessWidget {
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.25),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.26),
             child: const CustomListItem(),
           ),
           const SizedBox(
@@ -50,7 +50,13 @@ class Book_details_View_Body extends StatelessWidget {
           const RatingItem(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          Custom_button(),
+          const SizedBox(
+            height: 25,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Book_Action(),
+          ),
         ],
       ),
     );
