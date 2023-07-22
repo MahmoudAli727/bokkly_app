@@ -9,7 +9,7 @@ class Book_details_View_Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
