@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 abstract class Failure {}
 
 class ServerFailure extends Failure {
-  ServerFailure(super.errMessage);
+  ServerFailure(errMessage);
   factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:
