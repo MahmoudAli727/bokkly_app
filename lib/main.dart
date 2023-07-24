@@ -29,7 +29,7 @@ class BokklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => NewestCubit(
             getIt.get<Home_repo_imp>(),
-          ),
+          )..fetchNewestBooks(),
         )
       ],
       child: MaterialApp.router(
