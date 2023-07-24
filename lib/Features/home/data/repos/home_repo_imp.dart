@@ -14,7 +14,7 @@ class Home_repo_imp extends HomeRepo {
     try {
       var data = await api_service.get(
           endPoint:
-              "volumes?Filtering=free-ebooks&Sorting=newest &q=subject : programming");
+              "volumes?Filtering=free-ebooks&Sorting=newest &q=computer science");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
@@ -32,7 +32,7 @@ class Home_repo_imp extends HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
     try {
       var data = await api_service.get(
-          endPoint: "volumes?Filtering=free-ebooks&q=subject : programming");
+          endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
