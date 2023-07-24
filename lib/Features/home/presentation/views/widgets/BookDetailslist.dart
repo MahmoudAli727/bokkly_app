@@ -15,7 +15,9 @@ class BookDetailsList extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomListItem(),
+              child: CustomListItem(
+                  UrlImage:
+                      'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg'),
             );
           },
         ),

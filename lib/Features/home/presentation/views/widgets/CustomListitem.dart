@@ -1,9 +1,8 @@
-import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListItem extends StatelessWidget {
-  const CustomListItem({super.key});
-
+  const CustomListItem({super.key, required this.UrlImage});
+  final String UrlImage;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -12,9 +11,9 @@ class CustomListItem extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: Colors.red,
-          image: const DecorationImage(
+          image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(AssetsData.TestImage),
+            image: NetworkImage(UrlImage),
           ),
         ),
       ),

@@ -20,9 +20,11 @@ class FeatureList extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomListItem(),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: CustomListItem(
+                        UrlImage: state
+                            .books[index].volumeInfo!.imageLinks!.thumbnail!),
                   );
                 },
               ),

@@ -14,7 +14,9 @@ class BookDetailsSec extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.26),
-          child: const CustomListItem(),
+          child: const CustomListItem(
+              UrlImage:
+                  "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"),
         ),
         const SizedBox(
           height: 40,

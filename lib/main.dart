@@ -24,7 +24,7 @@ class BokklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => FeatureCubit(
             getIt.get<Home_repo_imp>(),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestCubit(
