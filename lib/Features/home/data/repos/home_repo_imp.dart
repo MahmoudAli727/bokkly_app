@@ -10,11 +10,10 @@ class Home_repo_imp extends HomeRepo {
 
   Home_repo_imp(this.api_service);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
     try {
       var data = await api_service.get(
-          endPoint:
-              "volumes?Filtering=free-ebooks&Sorting=newest &q=computer science");
+          endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));
@@ -29,7 +28,7 @@ class Home_repo_imp extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
     try {
       var data = await api_service.get(
           endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");

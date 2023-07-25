@@ -10,5 +10,3 @@ class Api_Services {
     return response.data;
   }
 }
-//
-//https://www.googleapis.com/books/v1volumes?Filtering=free-ebooks&Sorting=newest &q=subject : programming
