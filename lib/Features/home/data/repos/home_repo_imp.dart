@@ -31,7 +31,8 @@ class Home_repo_imp extends HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
     try {
       var data = await api_service.get(
-          endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");
+          endPoint:
+              "volumes?Filtering=free-ebooks&Sorting=newest &q=Subject:computer science");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));

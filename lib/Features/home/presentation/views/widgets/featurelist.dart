@@ -25,8 +25,9 @@ class FeatureList extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: CustomListItem(
-                        UrlImage:
-                            state.books[index].volumeInfo.imageLinks.thumbnail),
+                        UrlImage: state.books[index].volumeInfo.imageLinks
+                                ?.thumbnail ??
+                            ""),
                   );
                 },
               ),
