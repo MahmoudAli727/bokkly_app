@@ -62,7 +62,7 @@ class BestSeller_item extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        width: 44.3,
+                        width: 90,
                       ),
                       RatingItem(
                         rating: book.volumeInfo.averageRating ?? 0,

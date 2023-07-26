@@ -35,7 +35,7 @@ class RatingItem extends StatelessWidget {
           width: 5,
         ),
         Text(
-          count.toString(),
+          " ($count)",
           style: Style.titleMedium14.copyWith(
             fontWeight: FontWeight.w600,
             color: Color(0xff707070),
