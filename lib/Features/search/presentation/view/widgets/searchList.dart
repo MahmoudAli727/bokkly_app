@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchbookList extends StatelessWidget {
-  const SearchbookList({super.key});
-
+  const SearchbookList({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -12,7 +13,6 @@ class SearchbookList extends StatelessWidget {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
           // child: BestSeller_item(
-          //   book: ,
           // ),
         );
       },

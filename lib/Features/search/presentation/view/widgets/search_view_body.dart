@@ -4,8 +4,9 @@ import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class Search_View_body extends StatelessWidget {
-  const Search_View_body({super.key});
-
+  const Search_View_body({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return const Column(

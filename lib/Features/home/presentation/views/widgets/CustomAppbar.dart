@@ -5,8 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key});
-
+  const CustomAppbar({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +22,9 @@ class CustomAppbar extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              GoRouter.of(context).go(AppRouter.kSearchView);
+              GoRouter.of(context).go(
+                AppRouter.kSearchView,
+              );
             },
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
