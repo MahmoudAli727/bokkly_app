@@ -1,27 +1,43 @@
+import 'package:bookly_app/Features/home/presentation/view_models/Similar_book_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
+import 'package:bookly_app/core/utils/CustomCircular.dart';
+import 'package:bookly_app/core/widgets/Custom_error.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BookDetailsList extends StatelessWidget {
   const BookDetailsList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.16,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomListItem(
-                  UrlImage:
-                      'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg'),
-            );
-          },
-        ),
-      ),
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
+      builder: (context, state) {
+        if (state is SimilarBooksSuccess) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.16,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: ListView.builder(
+                itemCount: state.books.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: CustomBookImage(
+                        UrlImage: state.books[index].volumeInfo.imageLinks
+                                ?.thumbnail ??
+                            ""),
+                  );
+                },
+              ),
+            ),
+          );
+        } else if (state is SimilarBooksFailure) {
+          return CustomErrorWidget(errMessage: state.errMessage);
+        } else {
+          return const CustomLoadingIndicator();
+        }
+      },
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class CustomListItem extends StatelessWidget {
-  const CustomListItem({super.key, required this.UrlImage});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key, required this.UrlImage});
   final String UrlImage;
   @override
   Widget build(BuildContext context) {

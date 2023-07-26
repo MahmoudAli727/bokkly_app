@@ -52,7 +52,7 @@ class Home_repo_imp extends HomeRepo {
     try {
       var data = await api_service.get(
           endPoint:
-              "volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:Computer science");
+              "volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:programming");
       List<BookModel> books = [];
       for (var item in data["items"]) {
         books.add(BookModel.fromJson(item));

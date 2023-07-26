@@ -12,7 +12,7 @@ class RatingItem extends StatelessWidget {
     required this.count,
   }) : super(key: key);
   final MainAxisAlignment mainAxisAlignment;
-  final int rating;
+  final num rating;
   final int count;
   @override
   Widget build(BuildContext context) {

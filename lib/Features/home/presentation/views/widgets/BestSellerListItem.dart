@@ -13,7 +13,10 @@ class BestSeller_item extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).go(AppRouter.kBookDetalsView);
+        GoRouter.of(context).go(
+          AppRouter.kBookDetalsView,
+          extra: book,
+        );
       },
       child: SizedBox(
         height: 110,
@@ -22,7 +25,7 @@ class BestSeller_item extends StatelessWidget {
             const SizedBox(
               width: 30,
             ),
-            CustomListItem(
+            CustomBookImage(
                 UrlImage: book.volumeInfo.imageLinks?.thumbnail ?? ""),
             const SizedBox(
               width: 30,

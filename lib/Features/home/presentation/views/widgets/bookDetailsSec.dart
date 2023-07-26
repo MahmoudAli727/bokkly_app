@@ -1,11 +1,12 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/ratingItem.dart';
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSec extends StatelessWidget {
-  const BookDetailsSec({super.key});
-
+  const BookDetailsSec({super.key, required this.books});
+  final BookModel books;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -14,15 +15,15 @@ class BookDetailsSec extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.26),
-          child: const CustomListItem(
-              UrlImage:
-                  "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"),
+          child: CustomBookImage(
+              UrlImage: books.volumeInfo.imageLinks?.thumbnail ?? ''),
         ),
         const SizedBox(
           height: 40,
         ),
         Text(
-          "The Jungle Book",
+          books.volumeInfo.title!,
+          textAlign: TextAlign.center,
           style: Style.titleMedium30.copyWith(
             fontWeight: FontWeight.bold,
             fontSize: 25,
@@ -32,7 +33,7 @@ class BookDetailsSec extends StatelessWidget {
           height: 4,
         ),
         Text(
-          "Rudyard Kipling",
+          books.volumeInfo.authors?[0] ?? '',
           style: Style.titleMedium18.copyWith(
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.w500,
@@ -43,9 +44,11 @@ class BookDetailsSec extends StatelessWidget {
         const SizedBox(
           height: 12,
         ),
-        // const RatingItem(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        // ),
+        RatingItem(
+          rating: books.volumeInfo.averageRating ?? 0,
+          count: books.volumeInfo.ratingsCount ?? 0,
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
       ],
     );
   }
