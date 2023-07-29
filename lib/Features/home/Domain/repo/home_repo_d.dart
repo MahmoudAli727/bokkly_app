@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
