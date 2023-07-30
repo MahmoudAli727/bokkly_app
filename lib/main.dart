@@ -12,6 +12,7 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   setup();
+  await Hive.initFlutter();
   Hive.registerAdapter(bookentityAdapter());
   await Hive.openBox(kFeaturedBox);
   runApp(const BokklyApp());
