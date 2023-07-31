@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:bookly_app/Features/splash/presentation/views/widgets/Sliding.dart';
 import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:bookly_app/core/utils/routes.dart';
@@ -34,10 +36,10 @@ class _splash_view_bodyState extends State<splash_view_body>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image(
+        const Image(
           image: AssetImage(AssetsData.logo),
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
         SildingText(
@@ -48,7 +50,7 @@ class _splash_view_bodyState extends State<splash_view_body>
   }
 
   void navigatetohome() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       // Get.to(
       //   const home_view(),
       //   transition: Transition.fade,
@@ -61,10 +63,11 @@ class _splash_view_bodyState extends State<splash_view_body>
   void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 20), end: Offset.zero)
-        .animate(animationController);
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 20), end: Offset.zero)
+            .animate(animationController);
     animationController.forward();
   }
 }
