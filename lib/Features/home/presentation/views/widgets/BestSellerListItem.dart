@@ -29,7 +29,7 @@ class BestSeller_item extends StatelessWidget {
             ),
             const CustomBookImage(
                 UrlImage:
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dfstudio.com%2Fdigital-image-size-and-resolution-what-do-you-need-to-know%2F&psig=AOvVaw0daars8vzO_ZjdCE8mGpa1&ust=1690892480702000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLCYwsD3uIADFQAAAAAdAAAAABAE"
+                    "https://media.istockphoto.com/id/1410391090/photo/crystal-globe-putting-on-moss.webp?b=1&s=612x612&w=0&k=20&c=CksdIKZkvwKrOzoCk1VdBzbWK5nP0LXmddXvpaQO5tA="
                 //  book.volumeInfo.imageLinks?.thumbnail ?? ""
                 ),
             const SizedBox(
