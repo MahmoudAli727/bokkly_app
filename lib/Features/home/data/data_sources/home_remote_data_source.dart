@@ -5,7 +5,7 @@ import 'package:bookly_app/core/utils/function/data_to_lstget.dart';
 import 'package:bookly_app/core/utils/function/save_books.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<book_entity>> fetchFeatureBooks();
+  Future<List<book_entity>> fetchFeatureBooks({int pageNumber = 0});
   Future<List<book_entity>> fetchNewestBooks();
 }
 
@@ -15,9 +15,10 @@ class HomeRemoteDataSourceImp extends HomeRemoteDataSource {
   HomeRemoteDataSourceImp(this.api_services);
 
   @override
-  Future<List<book_entity>> fetchFeatureBooks() async {
+  Future<List<book_entity>> fetchFeatureBooks({int pageNumber = 0}) async {
     var data = await api_services.get(
-        endPoint: "volumes?Filtering=free-ebooks&q=programming");
+        endPoint:
+            "volumes?Filtering=free-ebooks&q=programming&startIndex=${pageNumber * 10}");
     List<book_entity> books = getBookslist(data);
     saveBooksData(books, kFeaturedBox);
     return books;

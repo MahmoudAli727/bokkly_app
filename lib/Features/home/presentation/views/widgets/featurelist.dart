@@ -1,12 +1,46 @@
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
+import 'package:bookly_app/Features/home/presentation/view_models/FeaturedBook_d/featured_book_d_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
 import 'package:bookly_app/core/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class FeatureList extends StatelessWidget {
+class FeatureList extends StatefulWidget {
   const FeatureList({super.key, required this.books});
   final List<book_entity> books;
+
+  @override
+  State<FeatureList> createState() => _FeatureListState();
+}
+
+class _FeatureListState extends State<FeatureList> {
+  late final ScrollController _scrollController;
+  var nextPage = 1;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      _scrollListener();
+    });
+  }
+
+  void _scrollListener() {
+    var currentPositions = _scrollController.position.pixels;
+    var maxScrollLength = _scrollController.position.maxScrollExtent;
+    if (currentPositions >= 0.7 * maxScrollLength) {
+      BlocProvider.of<FeaturedBookDCubit>(context)
+          .fetchFeaturedBook_d(pageNumber: nextPage++);
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -14,8 +48,9 @@ class FeatureList extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: ListView.builder(
+          controller: _scrollController,
           physics: const BouncingScrollPhysics(),
-          itemCount: books.length,
+          itemCount: widget.books.length,
           // itemCount: state.books.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
@@ -29,7 +64,7 @@ class FeatureList extends StatelessWidget {
                   );
                 },
                 child: CustomBookImage(
-                    UrlImage: books[index].image ??
+                    UrlImage: widget.books[index].image ??
                         "https://media.istockphoto.com/id/1410391090/photo/crystal-globe-putting-on-moss.webp?b=1&s=612x612&w=0&k=20&c=CksdIKZkvwKrOzoCk1VdBzbWK5nP0LXmddXvpaQO5tA="),
               ),
             );
