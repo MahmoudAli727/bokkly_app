@@ -17,6 +17,7 @@ class FeatureList extends StatefulWidget {
 class _FeatureListState extends State<FeatureList> {
   late final ScrollController _scrollController;
   var nextPage = 1;
+  var isLoading = false;
   @override
   void initState() {
     super.initState();
@@ -26,12 +27,16 @@ class _FeatureListState extends State<FeatureList> {
     });
   }
 
-  void _scrollListener() {
+  void _scrollListener() async {
     var currentPositions = _scrollController.position.pixels;
     var maxScrollLength = _scrollController.position.maxScrollExtent;
     if (currentPositions >= 0.7 * maxScrollLength) {
-      BlocProvider.of<FeaturedBookDCubit>(context)
-          .fetchFeaturedBook_d(pageNumber: nextPage++);
+      if (!isLoading) {
+        isLoading = true;
+        await BlocProvider.of<FeaturedBookDCubit>(context)
+            .fetchFeaturedBook_d(pageNumber: nextPage++);
+        isLoading = false;
+      }
     }
   }
 
