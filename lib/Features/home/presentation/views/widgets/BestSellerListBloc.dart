@@ -29,8 +29,6 @@ class _BestSellerListBlocState extends State<BestSellerListBloc> {
         shoSnackBarNewest(context, state);
       }
     }, builder: (context, state) {
-      return BestSellerList(books: books);
-
       if (state is NewestBookDSuccess ||
           state is NewestBooDPaginationLoading ||
           state is NewestBooDPaginationFailure) {
@@ -38,12 +36,6 @@ class _BestSellerListBlocState extends State<BestSellerListBloc> {
       } else if (state is NewestBookDFailure) {
         return CustomErrorWidget(errMessage: state.errmessage);
       } else {
-        // return Container(
-        //   width: 100,
-        //   height: 100,
-        //   color: Colors.amber,
-        // );
-        // return BestSellerList(books: books);
         return const CustomBookImageLoadingIndicator();
       }
     });
