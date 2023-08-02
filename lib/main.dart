@@ -31,16 +31,6 @@ class BokklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // BlocProvider(
-        //   create: (context) => FeatureCubit(
-        //     getIt.get<Home_repo_imp>(),
-        //   )..fetchFeaturedBooks(),
-        // ),
-        // BlocProvider(
-        //   create: (context) => NewestCubit(
-        //     getIt.get<Home_repo_imp>(),
-        //   )..fetchBestSellerBooked(),
-        // ),
         BlocProvider(
           create: (context) => FeaturedBookDCubit(
             FetchFeaturedBooksUseCase(
@@ -49,12 +39,13 @@ class BokklyApp extends StatelessWidget {
           )..fetchFeaturedBook_d(),
         ),
         BlocProvider(
-          create: (context) => NewestBookDCubit(
-            FetchNewestBooksUseCase(
-              getIt.get<HomeRepoImpldomain>(),
+            create: (context) => NewestBookDCubit(
+                  FetchNewestBooksUseCase(
+                    getIt.get<HomeRepoImpldomain>(),
+                  ),
+                )
+            // ..fetchNewestBook_d(),
             ),
-          ),
-        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
