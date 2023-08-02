@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:bookly_app/Features/search/presentation/view/widgets/CustomTextField.dart';
 import 'package:bookly_app/Features/search/presentation/view/widgets/searchList.dart';
 import 'package:bookly_app/core/utils/style.dart';

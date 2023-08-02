@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, file_names
+
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/function/launch_url.dart';
 import 'package:bookly_app/core/widgets/Custom_Button.dart';
@@ -27,7 +29,7 @@ class Book_Action extends StatelessWidget {
             onPressed: () async {
               launchCustomUr(context, books.volumeInfo.previewLink);
             },
-            BackgroundColor: Color(0xffEF8262),
+            BackgroundColor: const Color(0xffEF8262),
             TextColor: Colors.white,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(12),

@@ -30,7 +30,7 @@ class FeaturedBook_DFailure extends FeaturedBookDState {
 
 class FeaturedBook_DSuccess extends FeaturedBookDState {
   final List<book_entity> books;
-  FeaturedBook_DSuccess({
+  const FeaturedBook_DSuccess({
     required this.books,
   });
 }

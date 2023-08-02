@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, file_names
+
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/BookListsec.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomBookDetailsAppBar.dart';
@@ -29,7 +31,7 @@ class Book_details_View_Body extends StatelessWidget {
                   height: 25,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Book_Action(
                     books: books,
                   ),

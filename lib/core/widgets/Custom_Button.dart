@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, camel_case_types, file_names
+
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 

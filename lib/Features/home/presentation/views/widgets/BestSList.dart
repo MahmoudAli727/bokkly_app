@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookly_app/Features/home/presentation/views/widgets/BestSellerListItem.dart';
 import 'package:flutter/material.dart';
 

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/Features/home/Domain/repo/home_repo_d.dart';
 import 'package:bookly_app/core/errors/failures.dart';

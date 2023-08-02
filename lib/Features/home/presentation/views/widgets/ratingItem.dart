@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, file_names
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,7 +38,7 @@ class RatingItem extends StatelessWidget {
           " ($count)",
           style: Style.titleMedium14.copyWith(
             fontWeight: FontWeight.w600,
-            color: Color(0xff707070),
+            color: const Color(0xff707070),
           ),
         ),
       ],

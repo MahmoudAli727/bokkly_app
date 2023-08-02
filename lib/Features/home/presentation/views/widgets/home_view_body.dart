@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:bookly_app/Features/home/presentation/views/widgets/BestSList.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomAppbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/FeaturedListWithBlocBuilder.dart';

@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
+// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types, file_names
 
 import 'package:hive/hive.dart';
 part 'Book_entity.g.dart';

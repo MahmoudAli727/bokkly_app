@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookly_app/core/utils/Assets.dart';
 import 'package:bookly_app/core/utils/routes.dart';
 import 'package:flutter/material.dart';
