@@ -41,11 +41,12 @@ class HomeRepoImpldomain extends home_repo_d {
       {int pageNumber = 0}) async {
     List<book_entity> bookList = [];
     try {
-      bookList = homeLocalDataSource.fetchNewestBooks();
+      bookList = homeLocalDataSource.fetchNewestBooks(pageNumber: pageNumber);
       if (bookList.isNotEmpty) {
         return right(bookList);
       }
-      bookList = await homeRemoteDataSource.fetchNewestBooks();
+      bookList =
+          await homeRemoteDataSource.fetchNewestBooks(pageNumber: pageNumber);
       return right(bookList);
     } catch (e) {
       if (e is DioException) {
