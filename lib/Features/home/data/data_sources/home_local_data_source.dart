@@ -22,7 +22,13 @@ class HomeLocalDataSourceimp extends HomeLocalDataSource {
 
   @override
   List<book_entity> fetchNewestBooks({int pageNumber = 0}) {
+    int startIndex = pageNumber * 10;
+    int endIndex = (pageNumber + 1) * 10;
     var box = Hive.box<book_entity>(kNewestBox);
-    return box.values.toList();
+    int length = box.values.length;
+    if (startIndex >= length || endIndex > length) {
+      return [];
+    }
+    return box.values.toList().sublist(startIndex, endIndex);
   }
 }
