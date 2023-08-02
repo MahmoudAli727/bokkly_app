@@ -14,6 +14,14 @@ class FeaturedBook_DInitial extends FeaturedBookDState {}
 
 class FeaturedBook_DLoading extends FeaturedBookDState {}
 
+class FeaturedBook_DPaginationLoading extends FeaturedBookDState {}
+
+class FeaturedBook_DPaginationFailuer extends FeaturedBookDState {
+  final String errmessage;
+
+  const FeaturedBook_DPaginationFailuer(this.errmessage);
+}
+
 class FeaturedBook_DFailure extends FeaturedBookDState {
   final String errmessage;
 
