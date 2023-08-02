@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages
+// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages, void_checks
 
 import 'package:bloc/bloc.dart';
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
@@ -16,7 +16,7 @@ class NewestBookDCubit extends Cubit<NewestBookDState> {
     } else {
       emit(NewestBooDPaginationLoading());
     }
-    var result = await fetchNewestBooksUseCase.call();
+    var result = await fetchNewestBooksUseCase.call(pageNumber);
     result.fold((failure) {
       if (pageNumber == 0) {
         emit(NewestBookDFailure(failure.toString()));
