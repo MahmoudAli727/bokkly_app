@@ -32,7 +32,9 @@ class _BestSellerListBlocState extends State<BestSellerListBloc> {
       if (state is NewestBookDSuccess ||
           state is NewestBooDPaginationLoading ||
           state is NewestBooDPaginationFailure) {
-        return BestSellerList(books: books);
+        return BestSellerList(
+          books: books,
+        );
       } else if (state is NewestBookDFailure) {
         return CustomErrorWidget(errMessage: state.errmessage);
       } else {
