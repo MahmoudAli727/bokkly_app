@@ -22,7 +22,7 @@ class NewestBooDPaginationFailure extends NewestBookDState {
 class NewestBookDSuccess extends NewestBookDState {
   final List<book_entity> books;
 
-  const NewestBookDSuccess(this.books);
+  const NewestBookDSuccess({required this.books});
 }
 
 class NewestBookDFailure extends NewestBookDState {

@@ -19,16 +19,16 @@ class FeaturedListBloc extends StatefulWidget {
 }
 
 class _FeaturedListBlocState extends State<FeaturedListBloc> {
-  List<book_entity> boks = [];
+  List<book_entity> books = [];
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<FeaturedBookDCubit, FeaturedBookDState>(
       listener: (context, state) {
         if (state is FeaturedBook_DSuccess) {
-          boks.addAll(state.books);
+          books.addAll(state.books);
         }
         if (state is FeaturedBook_DPaginationFailuer) {
-          shoSnackBar(context, state);
+          shoSnackBarFeature(context, state);
         }
       },
       builder: (context, state) {
@@ -36,7 +36,7 @@ class _FeaturedListBlocState extends State<FeaturedListBloc> {
             state is FeaturedBook_DPaginationLoading ||
             state is FeaturedBook_DPaginationFailuer) {
           return FeatureList(
-            books: boks,
+            books: books,
           );
         } else if (state is FeaturedBook_DFailure) {
           return CustomErrorWidget(errMessage: state.errmessage);

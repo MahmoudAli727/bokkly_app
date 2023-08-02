@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types
 
-import 'package:bookly_app/Features/home/presentation/views/widgets/BestSList.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/BestSellerListBloc.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomAppbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/FeaturedListWithBlocBuilder.dart';
 import 'package:bookly_app/core/utils/style.dart';
@@ -41,7 +41,7 @@ class home_view_body extends StatelessWidget {
           ),
         ),
         SliverToBoxAdapter(
-          child: BestSellerList(),
+          child: BestSellerListBloc(),
         )
       ],
     );

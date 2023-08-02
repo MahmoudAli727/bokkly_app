@@ -24,7 +24,7 @@ class NewestBookDCubit extends Cubit<NewestBookDState> {
         emit(NewestBooDPaginationFailure(failure.toString()));
       }
     }, (books) {
-      emit(NewestBookDSuccess(books));
+      emit(NewestBookDSuccess(books: books));
     });
   }
 }
