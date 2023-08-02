@@ -37,7 +37,8 @@ class HomeRepoImpldomain extends home_repo_d {
   }
 
   @override
-  Future<Either<Failure, List<book_entity>>> fetchNewesBookentity() async {
+  Future<Either<Failure, List<book_entity>>> fetchNewesBookentity(
+      {int pageNumber = 0}) async {
     List<book_entity> bookList = [];
     try {
       bookList = homeLocalDataSource.fetchNewestBooks();
