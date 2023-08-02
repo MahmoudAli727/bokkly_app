@@ -25,6 +25,12 @@ class _CustomFadingWidgetState extends State<CustomFadingWidget>
   }
 
   @override
+  dispose() {
+    animationController.dispose(); // you need this
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Opacity(
       opacity: animation.value,
