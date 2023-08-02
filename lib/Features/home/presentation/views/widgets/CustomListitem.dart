@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/Custom_book_image_loading_indicator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class CustomBookImage extends StatelessWidget {
           imageUrl: UrlImage,
           fit: BoxFit.fill,
           placeholder: (context, url) => const Center(
-            child: CircularProgressIndicator(),
+            child: CustomBookImageLoadingIndicator(),
+            // child: CircularProgressIndicator(),
           ),
           errorWidget: (context, url, error) => const Icon(
             Icons.error,
