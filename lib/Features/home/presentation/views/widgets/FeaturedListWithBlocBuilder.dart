@@ -1,7 +1,7 @@
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/Features/home/presentation/view_models/FeaturedBook_d/featured_book_d_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/Featured_books_list_loading_indicator.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featurelist.dart';
-import 'package:bookly_app/core/utils/CustomCircular.dart';
 import 'package:bookly_app/core/utils/function/showSnacbar.dart';
 import 'package:bookly_app/core/widgets/Custom_error.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class _FeaturedListBlocState extends State<FeaturedListBloc> {
         } else if (state is FeaturedBook_DFailure) {
           return CustomErrorWidget(errMessage: state.errmessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const FeaturedBooksListViewLoadingIndicator();
         }
       },
     );
