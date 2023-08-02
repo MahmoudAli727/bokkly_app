@@ -7,7 +7,12 @@ class CustomBookImageLoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.6 / 4,
-      child: ClipRRect(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          color: Colors.grey[50],
+        ),
+      ),
     );
   }
 }
