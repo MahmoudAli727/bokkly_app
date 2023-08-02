@@ -11,6 +11,14 @@ class NewestBookDInitial extends NewestBookDState {}
 
 class NewestBookDloading extends NewestBookDState {}
 
+class NewestBooDPaginationLoading extends NewestBookDState {}
+
+class NewestBooDPaginationFailure extends NewestBookDState {
+  final String errmessage;
+
+  const NewestBooDPaginationFailure(this.errmessage);
+}
+
 class NewestBookDSuccess extends NewestBookDState {
   final List<book_entity> books;
 
