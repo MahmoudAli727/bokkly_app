@@ -39,13 +39,12 @@ class BokklyApp extends StatelessWidget {
           )..fetchFeaturedBook_d(),
         ),
         BlocProvider(
-            create: (context) => NewestBookDCubit(
-                  FetchNewestBooksUseCase(
-                    getIt.get<HomeRepoImpldomain>(),
-                  ),
-                )
-            // ..fetchNewestBook_d(),
+          create: (context) => NewestBookDCubit(
+            FetchNewestBooksUseCase(
+              getIt.get<HomeRepoImpldomain>(),
             ),
+          )..fetchNewestBook_d(),
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
