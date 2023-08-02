@@ -8,7 +8,7 @@ import 'package:bookly_app/core/utils/function/save_books.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<book_entity>> fetchFeatureBooks({int pageNumber = 0});
-  Future<List<book_entity>> fetchNewestBooks();
+  Future<List<book_entity>> fetchNewestBooks({int pageNumber = 0});
 }
 
 class HomeRemoteDataSourceImp extends HomeRemoteDataSource {
@@ -27,7 +27,7 @@ class HomeRemoteDataSourceImp extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<book_entity>> fetchNewestBooks() async {
+  Future<List<book_entity>> fetchNewestBooks({int pageNumber = 0}) async {
     var data = await api_services.get(
         endPoint: "volumes?Filtering=free-ebooks&Sorting=newest&q=programming");
     List<book_entity> books = getBookslist(data);
