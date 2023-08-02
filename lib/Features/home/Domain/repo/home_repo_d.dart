@@ -7,5 +7,6 @@ import 'package:dartz/dartz.dart';
 abstract class home_repo_d {
   Future<Either<Failure, List<book_entity>>> fetchFeauredBookentity(
       {int pageNumber = 0});
-  Future<Either<Failure, List<book_entity>>> fetchNewesBookentity();
+  Future<Either<Failure, List<book_entity>>> fetchNewesBookentity(
+      {int pageNumber = 0});
 }

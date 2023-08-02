@@ -11,7 +11,7 @@ class FetchNewestBooksUseCase extends use_case<List<book_entity>, void> {
 
   FetchNewestBooksUseCase(this.home_r_d);
   @override
-  Future<Either<Failure, List<book_entity>>> call([void param]) async {
-    return await home_r_d.fetchNewesBookentity();
+  Future<Either<Failure, List<book_entity>>> call([param = 0]) async {
+    return await home_r_d.fetchNewesBookentity(pageNumber: param as int);
   }
 }
