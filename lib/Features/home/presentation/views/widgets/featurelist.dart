@@ -56,7 +56,6 @@ class _FeatureListState extends State<FeatureList> {
           controller: _scrollController,
           physics: const BouncingScrollPhysics(),
           itemCount: widget.books.length,
-          // itemCount: state.books.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
