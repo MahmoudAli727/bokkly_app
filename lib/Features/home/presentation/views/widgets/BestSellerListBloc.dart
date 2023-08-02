@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/Features/home/presentation/view_models/NewestBooks_D/newest_book_d_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/BestSList.dart';
