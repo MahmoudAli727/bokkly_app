@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/ratingItem.dart';
