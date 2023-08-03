@@ -55,4 +55,10 @@ class HomeRepoImpldomain extends home_repo_d {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  // @override
+  // Future<Either<Failure, List<book_entity>>> fetchSimilarBooks({required String category, int pageNumber = 0}) {
+  //   // TODO: implement fetchSimilarBooks
+  //   throw UnimplementedError();
+  // }
 }

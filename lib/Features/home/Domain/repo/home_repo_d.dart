@@ -9,4 +9,6 @@ abstract class home_repo_d {
       {int pageNumber = 0});
   Future<Either<Failure, List<book_entity>>> fetchNewesBookentity(
       {int pageNumber = 0});
+  // Future<Either<Failure, List<book_entity>>> fetchSimilarBooks(
+  //     {required String category, int pageNumber = 0});
 }
