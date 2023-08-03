@@ -18,7 +18,6 @@ class CustomAppbar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsData.logo,
-            // width: 100,
             height: 18,
           ),
           const Spacer(),
