@@ -12,9 +12,7 @@ void setup() {
   getIt.registerSingleton<HomeRepoImpldomain>(HomeRepoImpldomain(
     homeLocalDataSource: HomeLocalDataSourceimp(),
     homeRemoteDataSource: HomeRemoteDataSourceImp(
-      Api_Services(
-        Dio(),
-      ),
+      getIt.get<Api_Services>(),
     ),
   ));
 }
