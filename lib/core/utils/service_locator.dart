@@ -9,8 +9,6 @@ final getIt = GetIt.instance;
 
 void setup() {
   getIt.registerSingleton<Api_Services>(Api_Services(Dio()));
-  // getIt.registerSingleton<Home_repo_imp>(
-  // Home_repo_imp(getIt.get<Api_Services>()));
   getIt.registerSingleton<HomeRepoImpldomain>(HomeRepoImpldomain(
     homeLocalDataSource: HomeLocalDataSourceimp(),
     homeRemoteDataSource: HomeRemoteDataSourceImp(

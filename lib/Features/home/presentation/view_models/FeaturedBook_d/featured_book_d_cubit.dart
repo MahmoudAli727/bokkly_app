@@ -12,7 +12,6 @@ class FeaturedBookDCubit extends Cubit<FeaturedBookDState> {
       : super(FeaturedBook_DInitial());
   final FetchFeaturedBooksUseCase featuredBooksUseCase;
   Future<void> fetchFeaturedBook_d({int pageNumber = 0}) async {
-    // emit(FeaturedBook_DInitial());
     if (pageNumber == 0) {
       emit(FeaturedBook_DLoading());
     } else {

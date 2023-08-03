@@ -13,42 +13,10 @@ class BestSellerList extends StatefulWidget {
 }
 
 class _BestSellerListState extends State<BestSellerList> {
-  // late final ScrollController _scrollController;
-  // var nextPage = 1;
-  // var isLoading = false;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _scrollController = ScrollController();
-  //   _scrollController.addListener(() {
-  //     _scrollListener();
-  //   });
-  // }
-
-  // void _scrollListener() async {
-  //   var currentPositions = _scrollController.position.pixels;
-  //   var maxScrollLength = _scrollController.position.maxScrollExtent;
-  //   if (currentPositions >= 0.7 * maxScrollLength) {
-  //     if (!isLoading) {
-  //       isLoading = true;
-  //       await BlocProvider.of<NewestBookDCubit>(context)
-  //           .fetchNewestBook_d(pageNumber: nextPage++);
-  //       isLoading = false;
-  //     }
-  //   }
-  // }
-
-  // @override
-  // void dispose() {
-  //   _scrollController.dispose();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      // controller: _scrollController,
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: widget.books.length,

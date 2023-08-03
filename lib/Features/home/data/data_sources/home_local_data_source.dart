@@ -5,8 +5,6 @@ import 'package:hive/hive.dart';
 abstract class HomeLocalDataSource {
   List<book_entity> fetchFeatureBooks({int pageNumber = 0});
   List<book_entity> fetchNewestBooks({int pageNumber = 0});
-  // List<book_entity> fetchSimilareBooks(
-  //     {int pageNumber = 0, required String caregory});
 }
 
 class HomeLocalDataSourceimp extends HomeLocalDataSource {
@@ -33,11 +31,4 @@ class HomeLocalDataSourceimp extends HomeLocalDataSource {
     }
     return box.values.toList().sublist(startIndex, endIndex);
   }
-
-  // @override
-  // List<book_entity> fetchSimilareBooks(
-  //     {int pageNumber = 0, required String caregory}) {
-  //   // TODO: implement fetchSimilareBooks
-  //   throw UnimplementedError();
-  // }
 }
