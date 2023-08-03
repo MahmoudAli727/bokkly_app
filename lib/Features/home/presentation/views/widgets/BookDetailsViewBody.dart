@@ -1,48 +1,46 @@
 // ignore_for_file: camel_case_types, file_names
 
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/BookListsec.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/BookDetailsList_bloc.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomBookDetailsAppBar.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/bookAction.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/bookDetailsSec.dart';
 import 'package:flutter/material.dart';
 
 class Book_details_View_Body extends StatelessWidget {
-  const Book_details_View_Body({super.key, required this.books});
-  final BookModel books;
+  const Book_details_View_Body({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                const CustomBookDetailsAppbar(),
-                const SizedBox(
+                CustomBookDetailsAppbar(),
+                SizedBox(
                   height: 10,
                 ),
-                BookDetailsSec(
-                  books: books,
-                ),
-                const SizedBox(
+                // BookDetailsSec(
+                //   book: books,
+                // ),
+                SizedBox(
                   height: 25,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Book_Action(
-                    books: books,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  // child: Book_Action(
+                  //   books: books,
+                  // ),
                 ),
-                const Expanded(
+                Expanded(
                   child: SizedBox(
                     height: 50,
                   ),
                 ),
-                const BookDetailsListSec(),
-                const SizedBox(
+                BookDetailsListbloc(),
+                SizedBox(
                   height: 40,
                 ),
               ],

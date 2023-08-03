@@ -1,12 +1,12 @@
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/Features/home/Domain/entities/Book_entity.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/CustomListitem.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/ratingItem.dart';
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSec extends StatelessWidget {
-  const BookDetailsSec({super.key, required this.books});
-  final BookModel books;
+  const BookDetailsSec({super.key, required this.book});
+  final book_entity book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -15,14 +15,13 @@ class BookDetailsSec extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.26),
-          child: CustomBookImage(
-              UrlImage: books.volumeInfo.imageLinks?.thumbnail ?? ''),
+          child: CustomBookImage(UrlImage: book.image ?? ''),
         ),
         const SizedBox(
           height: 40,
         ),
         Text(
-          books.volumeInfo.title!,
+          book.title,
           textAlign: TextAlign.center,
           style: Style.titleMedium30.copyWith(
             fontWeight: FontWeight.bold,
@@ -33,7 +32,7 @@ class BookDetailsSec extends StatelessWidget {
           height: 4,
         ),
         Text(
-          books.volumeInfo.authors?[0] ?? '',
+          book.authorname ?? '',
           style: Style.titleMedium18.copyWith(
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.w500,
@@ -45,8 +44,8 @@ class BookDetailsSec extends StatelessWidget {
           height: 12,
         ),
         RatingItem(
-          rating: books.volumeInfo.averageRating ?? 0,
-          count: books.volumeInfo.ratingsCount ?? 0,
+          rating: book.rating ?? 0,
+          count: 15,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
       ],

@@ -17,7 +17,7 @@ class BestSeller_item extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(
           AppRouter.kBookDetalsView,
-          // extra: book,
+          extra: book,
         );
       },
       child: SizedBox(

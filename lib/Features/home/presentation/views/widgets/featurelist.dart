@@ -64,7 +64,7 @@ class _FeatureListState extends State<FeatureList> {
                 onTap: () {
                   GoRouter.of(context).push(
                     AppRouter.kBookDetalsView,
-                    // extra: widget.books[index],
+                    extra: widget.books[index],
                   );
                 },
                 child: CustomBookImage(
