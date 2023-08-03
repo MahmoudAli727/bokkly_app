@@ -42,7 +42,7 @@ class Book_details_View_Body extends StatelessWidget {
                     height: 50,
                   ),
                 ),
-                // BookDetailsListbloc(),
+                // const BookDetailsListbloc(),
                 const SizedBox(
                   height: 40,
                 ),

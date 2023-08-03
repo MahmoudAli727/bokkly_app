@@ -51,7 +51,7 @@ class BestSeller_item extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    book.authorname![0],
+                    book.authorname!,
                     style: Style.titleMedium14,
                   ),
                   const SizedBox(
